@@ -7,7 +7,7 @@ import PredictionPage from './presentation/pages/PredictionPage.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename='/yuro'>
+    <BrowserRouter basename='/heartcare'>
       <Routes>
         <Route index={true} element={<HomePage/>} />
         <Route path='/medics' element={<PredictionPage />} />

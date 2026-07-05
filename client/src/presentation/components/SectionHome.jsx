@@ -37,17 +37,17 @@ function SectionHome() {
       <motion.div 
         variants={containerVariants}
         initial="hidden"
-        whileInView="visible" // Otomatis trigger animasi saat elemen masuk viewport scroll
-        viewport={{ once: true, amount: 0.3 }} // Hanya berjalan sekali saat di-scroll
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
         className='text-white flex flex-col w-full md:w-[45%] lg:w-[40%] z-10 text-center md:text-start space-y-6 md:space-y-1'
       >
         <motion.h2 
           variants={itemVariants}
           className='font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight uppercase'
         >
-          Take Care Of <br />
+          Jaga <br />
           <span className='bg-clip-text text-transparent bg-linear-to-r from-pink to-white drop-shadow-sm'>
-            Your Heart Disease
+            Kesehatan Jantung Anda
           </span>
         </motion.h2> 
         
@@ -55,7 +55,7 @@ function SectionHome() {
           variants={itemVariants}
           className='font-medium text-base sm:text-lg text-white/80 max-w-md mx-auto md:mx-0 leading-relaxed'
         >
-          It keeps running 24/7, non-stop, always by your side. Give a damn about your heart.
+          Jantung bekerja tanpa henti selama 24 jam setiap hari untuk menjaga tubuh tetap hidup. Mulailah peduli dan rawat kesehatan jantung Anda sejak sekarang.
         </motion.p>
         
         {/* Fitur List */}
@@ -63,7 +63,7 @@ function SectionHome() {
           variants={itemVariants}
           className='space-y-3.5 text-left max-w-xs mx-auto md:mx-0 font-medium text-white/90'
         >
-          {['Interactive 3D heart model', 'Expert heart health insight', 'Personalized health tracking tools'].map((text, idx) => (
+          {['Model jantung 3D interaktif', 'Informasi kesehatan jantung dari para ahli', 'Alat pemantauan kesehatan yang dipersonalisasi'].map((text, idx) => (
             <li key={idx} className='flex items-center space-x-3 group/item'>
               <span className='flex h-2 w-2 rounded-full bg-pink group-hover/item:scale-150 transition-transform duration-300' />
               <span className="group-hover/item:text-pink transition-colors duration-200">{text}</span>
@@ -77,7 +77,7 @@ function SectionHome() {
             to={'/medics'} 
             className='inline-block w-full sm:w-auto sm:px-12 py-4 bg-pink text-dark-red font-extrabold text-lg rounded-full text-center shadow-lg shadow-pink/20 hover:shadow-pink/40 hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out transform'
           >
-            Get In Touch
+            Konsultasi Sekarang
           </Link>
         </motion.div>
       </motion.div>

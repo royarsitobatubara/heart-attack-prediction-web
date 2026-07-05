@@ -4,7 +4,6 @@ from pydantic import BaseModel
 from typing import List
 import joblib
 import pandas as pd
-import os
 
 app = FastAPI()
 
@@ -15,8 +14,7 @@ app.add_middleware(
     allow_credentials = True,
     allow_headers = ["*"]
 )
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, "model", "model_heart_attack_prediction.pkl")
+MODEL_PATH = r"D:\heart attack-ML project\server\model\model_heart_attack_prediction.pkl"
 
 try:
     model = joblib.load(MODEL_PATH)
