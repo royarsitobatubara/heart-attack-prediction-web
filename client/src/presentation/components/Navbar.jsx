@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import logo from '../../assets/logo.svg'
 import { MdMenu, MdClose } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     const [isShowMenu, setShowMenu] = useState(false)
@@ -43,11 +44,23 @@ function Navbar() {
                 <ul className='hidden md:flex md:flex-row font-medium gap-x-8 text-sm uppercase tracking-wider'>
                     {listNav.map((item, index) => (
                         <li key={index} className="relative group py-1">
-                            <a href={item.path} className="hover:text-pink transition-colors duration-200">
-                                {item.label}
-                            </a>
-                            {/* Garis animasi di bawah teks */}
-                            <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-pink transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                            {
+                                index != 3
+                                ? <>
+                                    <a href={item.path} className="hover:text-pink transition-colors duration-200">
+                                        {item.label}
+                                    </a>
+                                    {/* Garis animasi di bawah teks */}
+                                    <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-pink transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                                </>
+                                : <>
+                                    <Link to={item.path} className="hover:text-pink transition-colors duration-200">
+                                        {item.label}
+                                    </Link>
+                                    {/* Garis animasi di bawah teks */}
+                                    <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-pink transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                                </>
+                            }
                         </li>
                     ))}
                 </ul>
@@ -77,13 +90,17 @@ function Navbar() {
                 <ul className='flex flex-col gap-8 text-lg font-medium tracking-wide'>
                     {listNav.map((item, index) => (
                         <li key={index} className="border-b border-white/5 pb-3">
-                            <a 
-                                href={item.path} 
-                                onClick={() => setShowMenu(false)} // Tutup menu setelah klik tautan
-                                className="block active:text-pink hover:text-pink transition-colors w-full"
-                            >
-                                {item.label}
-                            </a>
+                            {
+                                index==3
+                                ? <Link to={item.path} onClick={() => setShowMenu(false)} className="block active:text-pink hover:text-pink transition-colors w-full"> {item.label}</Link>
+                                :(<a 
+                                    href={item.path} 
+                                    onClick={() => setShowMenu(false)} // Tutup menu setelah klik tautan
+                                    className="block active:text-pink hover:text-pink transition-colors w-full"
+                                >
+                                    {item.label}
+                                </a>)
+                            }
                         </li>
                     ))}
                 </ul>
